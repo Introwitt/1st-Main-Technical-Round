@@ -1,0 +1,35 @@
+// Database Schema for Digital Magazine Subscription
+
+
+// Subscription Table Schema
+Subscription_Id : Integer,
+Subscription Rate : Integer,
+Subscription Time_Frame : Integer,
+User_Id : Integer, Foriegn Key, used as a Primary key in User Table
+
+// User Schema
+User_Id : Integer,
+Name: String,
+Address : String, 
+Subscription Id: Foreign Key, used as A Primary Key in Subscription Table
+
+// Magazine Schema
+ Magazine_Id : Integer,
+ Magazine_Publisher : String,
+ Magazine_Price : Integer,
+ User_Id: Foreign Key, used as a Primary Key in User Table
+
+
+ // User and Subscription Details Schema
+
+ User_Id : Integer
+ Subscription_Id : Integer
+ Purchased_date : Date
+ Renewal_date : Date
+ Number of Renewals : Integer
+
+ // Query to count the number of users having active subscriptions from the table.
+
+ Select Count(Subscription_Id)
+ From User and Subscription Table
+ Where Current_date<= Expiry_date  // current_date = today's date.
